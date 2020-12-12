@@ -1,0 +1,66 @@
+---
+repository:
+  name: docker-ubuntu-systemd
+  description: Ubuntu image including Systemd
+  homepage: https://hub.docker.com/repository/docker/dhoppeit/docker-ubuntu-systemd/
+  topics: docker, buildx, ubuntu-18.04, linux/amd64, linux/arm64, linux/arm/v7
+  private: false
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_downloads: true
+  default_branch: master
+  allow_squash_merge: true
+  allow_merge_commit: true
+  allow_rebase_merge: true
+  delete_branch_on_merge: true
+  archived: false
+
+labels:
+  - name: backwards-incompatible
+    color: eb6420
+  - name: beginner-friendly
+    color: d4c5f9
+  - name: bug
+    color: 0e8a16
+  - name: docs
+    color: 006b75
+  - name: duplicate
+    color: cccccc
+  - name: enhancement
+    color: 0052cc
+  - name: invalid
+    color: e4e669
+  - name: needs-docs
+    color: 006b75
+  - name: needs-feedback
+    color: 5319e7
+  - name: needs-help
+    color: d4c5f9
+  - name: needs-rebase
+    color: 207de5
+  - name: needs-squash
+    color: c2e0c6
+  - name: needs-tests
+    color: f7c6c7
+  - name: needs-work
+    color: fbca04
+  - name: release-summary
+    color: bfdadc
+  - name: skip-changelog
+    color: 343e4c
+  - name: tests-fail
+    color: e11d21
+  - name: wont-fix
+    color: "000000"
+
+branches:
+  - name: master
+    protection:
+      required_pull_request_reviews: null
+      required_status_checks:
+        strict: true
+        contexts: []
+      enforce_admins: null
+      restrictions: null
+      required_signatures: false
