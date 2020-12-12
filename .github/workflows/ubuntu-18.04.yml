@@ -1,0 +1,31 @@
+---
+name: Ubuntu 18.04
+
+on:
+  push:
+    branches:
+      - 18.04
+  schedule:
+    - cron: '0 1 * * 1'
+
+jobs:
+  buildx:
+    name: Docker Buildx
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Docker Hub (login)
+        uses: docker/login-action@v1
+        with:
+          username: "${{ secrets.DOCKER_USERNAME }}"
+          password: "${{ secrets.DOCKER_PASSWORD }}"
+      - name: Docker Buildx (prepare)
+        uses: crazy-max/ghaction-docker-buildx@v3
+      - name: Docker Buildx (build)
+        run: |
+          docker buildx build \
+            --file ./ubuntu-18.04.Dockerfile ./ \
+            --output "type=image,push=true" \
+            --platform linux/amd64,linux/arm64,linux/arm/v7 \
+            --tag dhoppeit/docker-ubuntu-systemd:18.04
