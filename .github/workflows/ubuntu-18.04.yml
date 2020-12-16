@@ -13,6 +13,7 @@ jobs:
   buildx:
     name: Docker Buildx
     runs-on: ubuntu-20.04
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
