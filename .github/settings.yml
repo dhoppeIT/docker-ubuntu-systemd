@@ -3,7 +3,7 @@ repository:
   name: docker-ubuntu-systemd
   description: Ubuntu image including Systemd
   homepage: https://hub.docker.com/repository/docker/dhoppeit/docker-ubuntu-systemd/
-  topics: docker, buildx, ubuntu-18, amd64, arm64, arm
+  topics: docker, buildx, ubuntu-18, ubuntu-20, amd64, arm64, arm
   private: false
   has_issues: true
   has_projects: false
